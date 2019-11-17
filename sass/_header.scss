@@ -1,0 +1,73 @@
+.header {
+    background-color: $color-grey-dark-1;
+    grid-column: full-start / col-end 6;
+
+    background-image: linear-gradient(rgba($color-secondary, 0.85), rgba($color-secondary, 0.85)), url(../img/landing-bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    justify-content: center;
+    grid-row-gap: 1.5rem;
+    padding: 8rem;
+    padding-top: 4rem;
+
+    @media only screen and (max-width: $bp-m) {
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;
+    }
+
+    &__logo {
+        mix-blend-mode: screen;
+        height: 10rem;
+        justify-self: center;
+        filter: brightness(200%);
+    }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+        background-color: $color-primary;
+        // border: 2px solid $color-primary;
+    }
+
+    &__served-text {
+
+        font-size: 1.6rem;
+        color: $color-grey-light-2;
+        display: grid;
+
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+
+    }
+
+    &__served-names {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+        align-items: center;
+
+        p {
+            color: $color-grey-light-3;
+            font-size: 1.4rem;
+        }
+    }
+
+
+}
